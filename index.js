@@ -8,6 +8,9 @@ app.use(routes);
 const mongoose = require('mongoose');
 const config = require('./config/key');
 
+const cors = require('cors');
+app.use(cors());
+
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true
   }).then(() => console.log('MongoDB Connected, you can use now!')).catch(err => console.log(err));

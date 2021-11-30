@@ -11,6 +11,9 @@ router.use(express.json());
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 
+const cors = require('cors');
+router.use(cors());
+
 router.post('/user/register', (req, res) => {
 
     const user = new User(req.body)

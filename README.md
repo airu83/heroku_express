@@ -12,3 +12,6 @@
 
 4. mongoDB 연결
    npm install mongoose --save
+
+5. cors
+   npm install --save cors
