@@ -2,16 +2,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT? process.env.PORT: 5000;
 
-const routes = require('./routes/user');
+const routes = require('./routes/user'); // 회원가입, 로그인, 로그아웃
 app.use(routes);
 
 const mongoose = require('mongoose');
 const config = require('./config/key');
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
 
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true
