@@ -11,8 +11,11 @@ router.use(express.json());
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());
 
-const cors = require('cors');
-router.use(cors());
+const cors = require('cors'); // 도메인이 다른 경우에 대한 처리
+router.use(cors({
+  origin: true, // Access-Control-Allow-Origin = default true
+  credentials: true
+}));
 
 router.post('/user/register', (req, res) => {
 
