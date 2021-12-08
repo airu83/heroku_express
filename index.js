@@ -12,7 +12,10 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: true, // Access-Control-Allow-Origin = default true
+  credentials: true
+}));
 
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true

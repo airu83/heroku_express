@@ -74,7 +74,7 @@ router.get('/user/logout', auth, (req, res) => {
       { token: "" }
       , (err, user) => {
         if (err) return res.json({ success: false, err });
-        return res.status(200).send({
+        return res.cookie("x_auth", "").status(200).send({
           success: true,
           User: user
         })
