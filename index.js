@@ -8,6 +8,9 @@ app.use(routes);
 const mongoose = require('mongoose');
 const config = require('./config/key');
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const cors = require('cors');
 app.use(cors());
 
