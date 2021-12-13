@@ -82,4 +82,15 @@ router.get('/user/logout', auth, (req, res) => {
 
 })
 
+router.get('/user/find', (req, res) => {
+  User.find({/*name: "m1"*/}, (err, user) => {
+    if (err) return res.json({ success: false, err });
+    console.log(user);
+    return res.status(200).send({
+      success: true,
+      User: user
+    });
+  })
+})
+
 module.exports = router;
